@@ -1,0 +1,308 @@
+/* =============================================================================
+   Design System: Color Palette
+   Description: Semantic color variables for a modern web application
+   Follows: CSS Custom Properties (CSS Variables) best practices
+   ============================================================================= */
+
+:root {
+  /* ---------------------------------------------------------------------------
+     PRIMARY COLORS - Core brand identity
+     ------------------------------------------------------------------------- */
+  --ds-color-primary-50: #f0f4ff;
+  --ds-color-primary-100: #e0e9ff;
+  --ds-color-primary-200: #c1d3ff;
+  --ds-color-primary-300: #a2bdff;
+  --ds-color-primary-400: #6b94ff;
+  --ds-color-primary-500: #3366ff;
+  --ds-color-primary-600: #2952cc;
+  --ds-color-primary-700: #1f3d99;
+  --ds-color-primary-800: #152966;
+  --ds-color-primary-900: #0a1533;
+
+  /* ---------------------------------------------------------------------------
+     SECONDARY COLORS - Complementary brand colors
+     ------------------------------------------------------------------------- */
+  --ds-color-secondary-50: #f3f0ff;
+  --ds-color-secondary-100: #ebe0ff;
+  --ds-color-secondary-200: #d8c1ff;
+  --ds-color-secondary-300: #c4a2ff;
+  --ds-color-secondary-400: #9d6bff;
+  --ds-color-secondary-500: #7533ff;
+  --ds-color-secondary-600: #5e29cc;
+  --ds-color-secondary-700: #471f99;
+  --ds-color-secondary-800: #301566;
+  --ds-color-secondary-900: #180a33;
+
+  /* ---------------------------------------------------------------------------
+     SEMANTIC SUCCESS COLORS - Positive feedback and confirmations
+     ------------------------------------------------------------------------- */
+  --ds-color-success-50: #f0fdf4;
+  --ds-color-success-100: #dcfce7;
+  --ds-color-success-200: #bbf7d0;
+  --ds-color-success-300: #86efac;
+  --ds-color-success-400: #4ade80;
+  --ds-color-success-500: #22c55e;
+  --ds-color-success-600: #16a34a;
+  --ds-color-success-700: #15803d;
+  --ds-color-success-800: #166534;
+  --ds-color-success-900: #145231;
+
+  /* ---------------------------------------------------------------------------
+     SEMANTIC WARNING COLORS - Alerts and caution states
+     ------------------------------------------------------------------------- */
+  --ds-color-warning-50: #fffbeb;
+  --ds-color-warning-100: #fef3c7;
+  --ds-color-warning-200: #fde68a;
+  --ds-color-warning-300: #fcd34d;
+  --ds-color-warning-400: #fbbf24;
+  --ds-color-warning-500: #f59e0b;
+  --ds-color-warning-600: #d97706;
+  --ds-color-warning-700: #b45309;
+  --ds-color-warning-800: #92400e;
+  --ds-color-warning-900: #78350f;
+
+  /* ---------------------------------------------------------------------------
+     SEMANTIC ERROR COLORS - Errors and destructive actions
+     ------------------------------------------------------------------------- */
+  --ds-color-error-50: #fef2f2;
+  --ds-color-error-100: #fee2e2;
+  --ds-color-error-200: #fecaca;
+  --ds-color-error-300: #fca5a5;
+  --ds-color-error-400: #f87171;
+  --ds-color-error-500: #ef4444;
+  --ds-color-error-600: #dc2626;
+  --ds-color-error-700: #b91c1c;
+  --ds-color-error-800: #991b1b;
+  --ds-color-error-900: #7f1d1d;
+
+  /* ---------------------------------------------------------------------------
+     SEMANTIC INFO COLORS - Information and neutral feedback
+     ------------------------------------------------------------------------- */
+  --ds-color-info-50: #f0f9ff;
+  --ds-color-info-100: #e0f2fe;
+  --ds-color-info-200: #bae6fd;
+  --ds-color-info-300: #7dd3fc;
+  --ds-color-info-400: #38bdf8;
+  --ds-color-info-500: #0ea5e9;
+  --ds-color-info-600: #0284c7;
+  --ds-color-info-700: #0369a1;
+  --ds-color-info-800: #075985;
+  --ds-color-info-900: #0c4a6e;
+
+  /* ---------------------------------------------------------------------------
+     NEUTRAL COLORS - Grayscale for text, borders, and backgrounds
+     ------------------------------------------------------------------------- */
+  --ds-color-neutral-50: #f9fafb;
+  --ds-color-neutral-100: #f3f4f6;
+  --ds-color-neutral-200: #e5e7eb;
+  --ds-color-neutral-300: #d1d5db;
+  --ds-color-neutral-400: #9ca3af;
+  --ds-color-neutral-500: #6b7280;
+  --ds-color-neutral-600: #4b5563;
+  --ds-color-neutral-700: #374151;
+  --ds-color-neutral-800: #1f2937;
+  --ds-color-neutral-900: #111827;
+
+  /* ---------------------------------------------------------------------------
+     FUNCTIONAL COLORS - Component-specific use cases
+     ------------------------------------------------------------------------- */
+
+  /* Background Colors */
+  --ds-color-bg-primary: #ffffff;
+  --ds-color-bg-secondary: #f9fafb;
+  --ds-color-bg-tertiary: #f3f4f6;
+  --ds-color-bg-overlay: rgba(0, 0, 0, 0.5);
+  --ds-color-bg-elevated: #ffffff;
+
+  /* Text Colors */
+  --ds-color-text-primary: #111827;
+  --ds-color-text-secondary: #4b5563;
+  --ds-color-text-tertiary: #9ca3af;
+  --ds-color-text-inverse: #ffffff;
+  --ds-color-text-disabled: #d1d5db;
+
+  /* Border Colors */
+  --ds-color-border-primary: #e5e7eb;
+  --ds-color-border-secondary: #d1d5db;
+  --ds-color-border-focus: #3366ff;
+  --ds-color-border-error: #ef4444;
+  --ds-color-border-success: #22c55e;
+  --ds-color-border-warning: #f59e0b;
+
+  /* Interactive Colors */
+  --ds-color-interactive-hover: #f3f4f6;
+  --ds-color-interactive-active: #e5e7eb;
+  --ds-color-interactive-focus: #3366ff;
+  --ds-color-interactive-disabled: #d1d5db;
+
+  /* Accent Colors */
+  --ds-color-accent-primary: #3366ff;
+  --ds-color-accent-secondary: #7533ff;
+  --ds-color-accent-highlight: #fbbf24;
+
+  /* ---------------------------------------------------------------------------
+     STATE COLORS - Interactive states
+     ------------------------------------------------------------------------- */
+
+  /* Hover States */
+  --ds-color-state-hover-primary: #2952cc;
+  --ds-color-state-hover-secondary: #5e29cc;
+  --ds-color-state-hover-success: #16a34a;
+  --ds-color-state-hover-error: #dc2626;
+
+  /* Active States */
+  --ds-color-state-active-primary: #1f3d99;
+  --ds-color-state-active-secondary: #471f99;
+  --ds-color-state-active-success: #15803d;
+  --ds-color-state-active-error: #b91c1c;
+
+  /* Focus States */
+  --ds-color-state-focus-outline: #3366ff;
+  --ds-color-state-focus-background: #f0f4ff;
+
+  /* Disabled States */
+  --ds-color-state-disabled-background: #f3f4f6;
+  --ds-color-state-disabled-text: #9ca3af;
+  --ds-color-state-disabled-border: #d1d5db;
+
+  /* ---------------------------------------------------------------------------
+     DARK MODE OVERRIDES (Optional - activate with data-theme="dark")
+     ------------------------------------------------------------------------- */
+  --ds-color-surface-light: #ffffff;
+  --ds-color-surface-dark: #1f2937;
+}
+
+/* Dark Mode Color Palette */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background Colors */
+    --ds-color-bg-primary: #111827;
+    --ds-color-bg-secondary: #1f2937;
+    --ds-color-bg-tertiary: #374151;
+    --ds-color-bg-overlay: rgba(0, 0, 0, 0.8);
+    --ds-color-bg-elevated: #1f2937;
+
+    /* Text Colors */
+    --ds-color-text-primary: #f9fafb;
+    --ds-color-text-secondary: #d1d5db;
+    --ds-color-text-tertiary: #9ca3af;
+    --ds-color-text-inverse: #111827;
+    --ds-color-text-disabled: #6b7280;
+
+    /* Border Colors */
+    --ds-color-border-primary: #374151;
+    --ds-color-border-secondary: #4b5563;
+    --ds-color-border-focus: #6b94ff;
+
+    /* Interactive Colors */
+    --ds-color-interactive-hover: #374151;
+    --ds-color-interactive-active: #4b5563;
+    --ds-color-interactive-focus: #6b94ff;
+
+    /* Surface */
+    --ds-color-surface-light: #1f2937;
+    --ds-color-surface-dark: #ffffff;
+  }
+}
+
+/* =============================================================================
+   ACCESSIBILITY - High Contrast Mode Support
+   ============================================================================= */
+@media (prefers-contrast: more) {
+  :root {
+    --ds-color-primary-500: #0f27ff;
+    --ds-color-error-500: #d60000;
+    --ds-color-success-500: #007a1f;
+    --ds-color-warning-500: #cc5900;
+    --ds-color-info-500: #0055cc;
+    --ds-color-text-primary: #000000;
+    --ds-color-border-primary: #000000;
+  }
+}
+
+/* =============================================================================
+   UTILITY CLASSES - For applying color palette
+   ============================================================================= */
+
+/* Text Colors */
+.text-primary {
+  color: var(--ds-color-text-primary);
+}
+
+.text-secondary {
+  color: var(--ds-color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--ds-color-text-tertiary);
+}
+
+.text-inverse {
+  color: var(--ds-color-text-inverse);
+}
+
+.text-error {
+  color: var(--ds-color-error-500);
+}
+
+.text-success {
+  color: var(--ds-color-success-500);
+}
+
+.text-warning {
+  color: var(--ds-color-warning-500);
+}
+
+.text-info {
+  color: var(--ds-color-info-500);
+}
+
+/* Background Colors */
+.bg-primary {
+  background-color: var(--ds-color-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--ds-color-bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--ds-color-bg-tertiary);
+}
+
+.bg-error {
+  background-color: var(--ds-color-error-50);
+}
+
+.bg-success {
+  background-color: var(--ds-color-success-50);
+}
+
+.bg-warning {
+  background-color: var(--ds-color-warning-50);
+}
+
+.bg-info {
+  background-color: var(--ds-color-info-50);
+}
+
+/* Border Colors */
+.border-primary {
+  border-color: var(--ds-color-border-primary);
+}
+
+.border-secondary {
+  border-color: var(--ds-color-border-secondary);
+}
+
+.border-error {
+  border-color: var(--ds-color-border-error);
+}
+
+.border-success {
+  border-color: var(--ds-color-border-success);
+}
+
+.border-warning {
+  border-color: var(--ds-color-border-warning);
+}

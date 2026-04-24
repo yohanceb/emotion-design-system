@@ -1,0 +1,165 @@
+/* =============================================================================
+   Icon Button Component Styles
+   BEM Naming Convention: icon-button
+   Polestar Design Tokens - Icon-Only Button Style
+   ============================================================================= */
+
+.icon-button {
+  /* Base Styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+
+  border: var(--border-width-thin) solid transparent;
+  border-radius: var(--border-radius-none);
+  transition: all 0.2s ease-in-out;
+
+  /* Default to primary variant */
+  background-color: var(--color-neutral-grey-800);
+  color: var(--color-brand-primary);
+
+  /* Focus state for accessibility */
+  &:focus-visible {
+    outline: var(--border-width-thick) solid var(--color-brand-primary);
+    outline-offset: -2px;
+  }
+
+  /* Hover state */
+  &:hover:not(:disabled) {
+    background-color: var(--color-neutral-grey-700);
+    border-color: var(--color-brand-primary);
+  }
+
+  /* Active state */
+  &:active:not(:disabled) {
+    background-color: var(--color-neutral-grey-800);
+  }
+
+  /* Disabled state */
+  &:disabled {
+    background-color: var(--color-neutral-grey-900);
+    color: var(--color-neutral-grey-600);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Icon Element
+   ------------------------------------------------------------------------- */
+.icon-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: inherit;
+  line-height: 1;
+}
+
+/* ---------------------------------------------------------------------------
+   SIZE VARIANTS - Using Polestar Spacing Tokens
+   ------------------------------------------------------------------------- */
+
+/* Small Size */
+.icon-button--small {
+  padding: var(--spacing-xs);
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.875rem;
+}
+
+/* Medium Size (Default) */
+.icon-button--medium {
+  padding: var(--spacing-sm);
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+}
+
+/* Large Size */
+.icon-button--large {
+  padding: var(--spacing-md);
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   COLOR VARIANTS - Polestar Minimalist Theme
+   ------------------------------------------------------------------------- */
+
+/* Primary Variant - Orange on Dark Background */
+.icon-button--primary {
+  background-color: var(--color-neutral-grey-800);
+  color: var(--color-brand-primary);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-neutral-grey-700);
+    border-color: var(--color-brand-primary);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-neutral-grey-600);
+  }
+}
+
+/* Secondary Variant - Orange Background with White Icon */
+.icon-button--secondary {
+  background-color: var(--color-brand-primary);
+  color: var(--color-neutral-white);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-brand-primary-light);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-brand-primary);
+  }
+}
+
+/* Ghost Variant - Transparent Background */
+.icon-button--ghost {
+  background-color: transparent;
+  border-color: var(--color-brand-primary);
+  color: var(--color-brand-primary);
+
+  &:hover:not(:disabled) {
+    background-color: rgba(255, 112, 0, 0.1);
+    border-color: var(--color-brand-primary-light);
+  }
+
+  &:active:not(:disabled) {
+    background-color: rgba(255, 112, 0, 0.15);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   DISABLED MODIFIER
+   ------------------------------------------------------------------------- */
+
+.icon-button--disabled {
+  background-color: var(--color-neutral-grey-900);
+  color: var(--color-neutral-grey-600);
+  border-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  &:hover,
+  &:active {
+    background-color: var(--color-neutral-grey-900);
+    border-color: transparent;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   REDUCED MOTION SUPPORT
+   ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-button {
+    transition: none;
+  }
+}

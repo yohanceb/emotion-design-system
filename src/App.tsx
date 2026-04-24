@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import { Button, OutlineButton, TextButton, IconButton, DownloadButton } from './components/atoms'
 import './App.css'
 
 function App() {
@@ -9,111 +10,144 @@ function App() {
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <main className="polestar-container">
+        <section id="center">
+          <div className="hero">
+            <img src={heroImg} alt="Hero" className="base" />
+            <img src={viteLogo} alt="Vite" className="vite" />
+            <img src={reactLogo} alt="React" className="framework" />
+          </div>
 
-      <div className="ticks"></div>
+          <h1>Emotion Design System</h1>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          {/* Filled Buttons */}
+          <section>
+            <h2 style={{ color: 'var(--theme-text-primary)', marginBottom: 'var(--spacing-lg)' }}>Filled Buttons</h2>
+            <div className="polestar-stack">
+              <Button 
+                variant="primary" 
+                size="medium"
+                onClick={() => setCount((count) => count + 1)}
+              >
+                Count is {count}
+              </Button>
+              
+              <Button 
+                variant="secondary" 
+                size="medium"
+              >
+                Get Started
+              </Button>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+              <Button 
+                variant="accent" 
+                size="large"
+              >
+                Explore Components
+              </Button>
+            </div>
+          </section>
+
+          {/* Outline Buttons */}
+          <section style={{ marginTop: 'var(--spacing-xxl)' }}>
+            <h2 style={{ color: 'var(--theme-text-primary)', marginBottom: 'var(--spacing-lg)' }}>Outline Buttons</h2>
+            <div className="polestar-stack">
+              <OutlineButton 
+                variant="primary" 
+                size="medium"
+              >
+                Cancel Action
+              </OutlineButton>
+              
+              <OutlineButton 
+                variant="secondary" 
+                size="medium"
+              >
+                Secondary Action
+              </OutlineButton>
+
+              <OutlineButton 
+                variant="danger" 
+                size="large"
+              >
+                Dangerous Action
+              </OutlineButton>
+            </div>
+          </section>
+
+          {/* Text Buttons */}
+          <section style={{ marginTop: 'var(--spacing-xxl)' }}>
+            <h2 style={{ color: 'var(--theme-text-primary)', marginBottom: 'var(--spacing-lg)' }}>Text Buttons</h2>
+            <div className="polestar-stack">
+              <TextButton 
+                variant="primary" 
+                size="medium"
+              >
+                Learn More
+              </TextButton>
+              
+              <TextButton 
+                variant="secondary" 
+                size="medium"
+              >
+                Read Documentation
+              </TextButton>
+
+              <TextButton 
+                variant="muted" 
+                size="small"
+              >
+                Skip for now
+              </TextButton>
+            </div>
+          </section>
+
+          {/* Icon Buttons */}
+          <section style={{ marginTop: 'var(--spacing-xxl)' }}>
+            <h2 style={{ color: 'var(--theme-text-primary)', marginBottom: 'var(--spacing-lg)' }}>Icon Buttons</h2>
+            <div style={{ display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>
+              <IconButton 
+                icon="⚙️"
+                ariaLabel="Settings"
+                variant="primary"
+                size="medium"
+              />
+              
+              <IconButton 
+                icon="🔔"
+                ariaLabel="Notifications"
+                variant="secondary"
+                size="medium"
+              />
+
+              <IconButton 
+                icon="✕"
+                ariaLabel="Close"
+                variant="ghost"
+                size="small"
+              />
+
+              <IconButton 
+                icon="✔️"
+                ariaLabel="Confirm"
+                variant="secondary"
+                size="large"
+              />
+            </div>
+          </section>
+
+          {/* Download Button */}
+          <section style={{ marginTop: 'var(--spacing-xxl)' }}>
+            <h2 style={{ color: 'var(--theme-text-primary)', marginBottom: 'var(--spacing-lg)' }}>Download Button</h2>
+            <DownloadButton 
+              href="/file.pdf"
+              fileName="design-system.pdf"
+              variant="secondary"
+              size="large"
+            />
+          </section>
+        </section>
+      </main>
     </>
   )
 }

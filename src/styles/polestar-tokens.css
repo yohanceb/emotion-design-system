@@ -1,0 +1,278 @@
+/* =============================================================================
+   Design Tokens - Polestar Minimalist Dark Theme
+   Inspired by Polestar Mobile App UI
+   Characterized by: minimalist dark theme, high contrast accent,
+   precise typography, and geometric layout
+   ============================================================================= */
+
+:root {
+  /* =========================================================================
+     1. COLOR PALETTE - Core Foundation
+     ========================================================================= */
+
+  /* Core Foundation */
+  --color-neutral-black: #000000;
+  --color-neutral-white: #ffffff;
+
+  /* Brand Accent */
+  --color-brand-primary: #ff7000;
+  --color-brand-primary-light: #ff8533;
+
+  /* Neutrals & UI Elements */
+  --color-neutral-grey-900: #121212;
+  --color-neutral-grey-800: #1c1c1c;
+  --color-neutral-grey-700: #2c2c2c;
+  --color-neutral-grey-600: #666666;
+  --color-neutral-grey-400: #afafaf;
+
+  /* Interactive Surfaces */
+  --color-surface-input: rgba(255, 255, 255, 0.05);
+  --color-surface-active: #ffffff;
+
+  /* =========================================================================
+     2. TYPOGRAPHY - Precise Neo-Grotesque
+     ========================================================================= */
+
+  /* Font Family */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font Sizes - Precise Scale */
+  --font-size-xs: 0.75rem;   /* 12px - captions, micro-copy */
+  --font-size-sm: 0.875rem;  /* 14px - secondary body text */
+  --font-size-base: 1rem;    /* 16px - standard body text, input fields */
+  --font-size-md: 1.125rem;  /* 18px - main navigation items */
+  --font-size-lg: 1.25rem;   /* 20px - section titles */
+  --font-size-xl: 1.5rem;    /* 24px - secondary headings */
+  --font-size-xxl: 2.25rem;  /* 36px - large bold welcome text */
+  --font-size-mega: 6rem;    /* 96px - decorative super-large numbers */
+
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-base: 1.5;
+  --line-height-loose: 1.7;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-base: 0;
+
+  /* =========================================================================
+     3. SPACING & LAYOUT - 4px Base Unit System
+     ========================================================================= */
+
+  /* Base Spacing Unit */
+  --spacing-unit: 4px;
+
+  /* Spacing Scale */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-huge: 64px;
+
+  /* Layout Padding/Margins */
+  --spacing-container-padding-x: var(--spacing-lg);
+  --spacing-stack-base: var(--spacing-md);
+
+  /* =========================================================================
+     4. BORDERS & ELEVATIONS - Minimal, Flat UI
+     ========================================================================= */
+
+  /* Border Widths */
+  --border-width-thin: 1px;
+  --border-width-thick: 2px;
+
+  /* Border Radius */
+  --border-radius-none: 0;
+  --border-radius-sm: 2px;
+
+  /* Shadows - No elevation, flat design */
+  --shadow-none: none;
+
+  /* =========================================================================
+     5. SEMANTIC COMPONENT TOKENS
+     ========================================================================= */
+
+  /* Base Theme */
+  --theme-bg-body: var(--color-neutral-black);
+  --theme-text-primary: var(--color-neutral-white);
+  --theme-text-secondary: var(--color-neutral-grey-600);
+  --theme-text-accent: var(--color-brand-primary);
+
+  /* Buttons - Flat, Sharp Corners */
+  --btn-primary-bg: var(--color-surface-active);
+  --btn-primary-text: var(--color-neutral-black);
+  --btn-link-text: var(--color-neutral-white);
+  --btn-accent-text: var(--color-brand-primary);
+
+  /* Inputs */
+  --input-bg: var(--color-surface-input);
+  --input-text: var(--color-neutral-white);
+  --input-label: var(--color-neutral-white);
+  --input-border: var(--color-neutral-grey-700);
+
+  /* List Items & Selectors */
+  --list-item-border: var(--color-neutral-grey-700);
+  --list-item-text-primary: var(--color-neutral-white);
+  --list-item-text-secondary: var(--color-neutral-grey-400);
+
+  /* Cards */
+  --card-bg-active: var(--color-brand-primary);
+  --card-text-active: var(--color-neutral-black);
+  --card-icon-active: var(--color-neutral-black);
+
+  --card-bg-inactive: var(--color-neutral-grey-800);
+  --card-text-inactive-label: var(--color-neutral-white);
+  --card-text-inactive-status: var(--color-brand-primary);
+  --card-icon-inactive: var(--color-neutral-white);
+
+  /* Navigation Bar */
+  --navbar-icon-inactive: var(--color-neutral-grey-600);
+  --navbar-icon-active: var(--color-brand-primary);
+
+  /* Interactive Indicators */
+  --indicator-bg-track: var(--color-neutral-grey-700);
+  --indicator-bg-fill: var(--color-brand-primary);
+}
+
+/* ============================================================================
+   GLOBAL TYPOGRAPHY & BASE STYLES
+   ============================================================================ */
+
+html {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--theme-bg-body);
+  color: var(--theme-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================================
+   TEXT ELEMENT UTILITIES
+   ============================================================================ */
+
+h1 {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  line-height: var(--line-height-base);
+}
+
+small {
+  font-size: var(--font-size-sm);
+  color: var(--theme-text-secondary);
+}
+
+a {
+  color: var(--btn-link-text);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ============================================================================
+   FORM ELEMENTS
+   ============================================================================ */
+
+input,
+textarea,
+select {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: var(--border-width-thin) solid var(--input-border);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-none);
+
+  &::placeholder {
+    color: var(--color-neutral-grey-600);
+  }
+
+  &:focus {
+    outline: var(--border-width-thick) solid var(--color-brand-primary);
+    outline-offset: -2px;
+  }
+}
+
+/* ============================================================================
+   UTILITY CLASSES - Responsive & Accessible
+   ============================================================================ */
+
+.polestar-text-primary {
+  color: var(--theme-text-primary);
+}
+
+.polestar-text-secondary {
+  color: var(--theme-text-secondary);
+}
+
+.polestar-text-accent {
+  color: var(--theme-text-accent);
+}
+
+.polestar-bg-primary {
+  background-color: var(--theme-bg-body);
+}
+
+.polestar-bg-surface {
+  background-color: var(--color-neutral-grey-900);
+}
+
+.polestar-container {
+  padding-left: var(--spacing-container-padding-x);
+  padding-right: var(--spacing-container-padding-x);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.polestar-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-stack-base);
+}
+
+.polestar-divider {
+  height: var(--border-width-thin);
+  background-color: var(--input-border);
+  margin: var(--spacing-md) 0;
+}

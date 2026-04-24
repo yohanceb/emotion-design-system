@@ -1,0 +1,148 @@
+/* =============================================================================
+   Text Button Component Styles
+   BEM Naming Convention: text-button
+   Polestar Design Tokens - Text-Only/Link Style
+   ============================================================================= */
+
+.text-button {
+  /* Base Styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  text-decoration: underline;
+  cursor: pointer;
+
+  border: none;
+  border-radius: var(--border-radius-none);
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  padding: var(--spacing-xs) var(--spacing-sm);
+
+  /* Default to primary variant */
+  color: var(--color-brand-primary);
+
+  /* Focus state for accessibility */
+  &:focus-visible {
+    outline: var(--border-width-thin) solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+
+  /* Hover state */
+  &:hover:not(:disabled) {
+    color: var(--color-brand-primary-light);
+  }
+
+  /* Active state */
+  &:active:not(:disabled) {
+    color: var(--color-brand-primary);
+  }
+
+  /* Disabled state */
+  &:disabled {
+    color: var(--color-neutral-grey-600);
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration-line: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Text Element
+   ------------------------------------------------------------------------- */
+.text-button__text {
+  display: inline-block;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* ---------------------------------------------------------------------------
+   SIZE VARIANTS
+   ------------------------------------------------------------------------- */
+
+/* Small Size */
+.text-button--small {
+  font-size: var(--font-size-sm);
+}
+
+/* Medium Size (Default) */
+.text-button--medium {
+  font-size: var(--font-size-base);
+}
+
+/* Large Size */
+.text-button--large {
+  font-size: var(--font-size-lg);
+}
+
+/* ---------------------------------------------------------------------------
+   COLOR VARIANTS - Polestar Minimalist Theme
+   ------------------------------------------------------------------------- */
+
+/* Primary Variant - Orange Text */
+.text-button--primary {
+  color: var(--color-brand-primary);
+
+  &:hover:not(:disabled) {
+    color: var(--color-brand-primary-light);
+  }
+
+  &:active:not(:disabled) {
+    color: var(--color-brand-primary);
+  }
+}
+
+/* Secondary Variant - White Text */
+.text-button--secondary {
+  color: var(--color-neutral-white);
+
+  &:hover:not(:disabled) {
+    color: var(--color-neutral-grey-400);
+  }
+
+  &:active:not(:disabled) {
+    color: var(--color-neutral-white);
+  }
+}
+
+/* Muted Variant - Grey Text */
+.text-button--muted {
+  color: var(--color-neutral-grey-600);
+
+  &:hover:not(:disabled) {
+    color: var(--color-neutral-white);
+  }
+
+  &:active:not(:disabled) {
+    color: var(--color-neutral-grey-600);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   DISABLED MODIFIER
+   ------------------------------------------------------------------------- */
+
+.text-button--disabled {
+  color: var(--color-neutral-grey-600);
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration-line: none;
+
+  &:hover,
+  &:active {
+    color: var(--color-neutral-grey-600);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   REDUCED MOTION SUPPORT
+   ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .text-button {
+    transition: none;
+  }
+}
