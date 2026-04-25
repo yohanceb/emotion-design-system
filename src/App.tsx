@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { Button, OutlineButton, TextButton, IconButton, DownloadButton } from './components/atoms'
+import { Card } from './components/molecules'
 import './App.css'
 
 function App() {
@@ -145,6 +146,83 @@ function App() {
               variant="secondary"
               size="large"
             />
+          </section>
+
+          {/* Card Components */}
+          <section style={{ marginTop: 'var(--spacing-xxl)' }}>
+            <h2 style={{ color: 'var(--theme-text-primary)', marginBottom: 'var(--spacing-lg)' }}>Card Component</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-xl)' }}>
+              {/* Default Card */}
+              <Card variant="default">
+                <Card.Header>
+                  <Card.Title>Default Card</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  A standard card with neutral styling. Perfect for displaying content in an organized, structured format.
+                </Card.Body>
+                <Card.Footer>
+                  <Button variant="primary" size="small">Action</Button>
+                  <TextButton variant="secondary" size="small">Learn More</TextButton>
+                </Card.Footer>
+              </Card>
+
+              {/* Highlighted Card */}
+              <Card variant="highlighted" interactive>
+                <Card.Header>
+                  <Card.Title>Highlighted Card</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  An interactive card with orange accent border. Great for featured content or call-to-action sections.
+                </Card.Body>
+                <Card.Footer>
+                  <Button variant="secondary" size="small">Explore</Button>
+                  <IconButton icon="→" ariaLabel="Next" variant="ghost" size="small" />
+                </Card.Footer>
+              </Card>
+
+              {/* Elevated Card */}
+              <Card variant="elevated">
+                <Card.Header>
+                  <Card.Title>Elevated Card</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  A card with elevated background styling. Ideal for secondary content or grouped information sections.
+                </Card.Body>
+                <Card.Footer>
+                  <OutlineButton variant="primary" size="small">View Details</OutlineButton>
+                </Card.Footer>
+              </Card>
+
+              {/* Card with Image */}
+              <Card variant="default">
+                <Card.Image src={viteLogo} alt="Vite Logo" />
+                <Card.Header>
+                  <Card.Title>Card with Image</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  Cards can include images for visual content representation. Perfect for product showcases or media galleries.
+                </Card.Body>
+              </Card>
+
+              {/* Disabled Card */}
+              <Card variant="default" disabled>
+                <Card.Header>
+                  <Card.Title>Disabled Card</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  A disabled card appears faded and is not interactive. Use this state for unavailable content.
+                </Card.Body>
+              </Card>
+
+              {/* Card with Only Body */}
+              <Card variant="elevated" interactive>
+                <Card.Body style={{ padding: 'var(--spacing-xl)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '2rem', marginBottom: 'var(--spacing-md)' }}>✨</div>
+                  <strong>Minimal Card</strong>
+                  <p style={{ marginTop: 'var(--spacing-sm)', color: 'var(--theme-text-secondary)' }}>A simple card with only body content.</p>
+                </Card.Body>
+              </Card>
+            </div>
           </section>
         </section>
       </main>

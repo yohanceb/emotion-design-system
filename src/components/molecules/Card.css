@@ -1,0 +1,290 @@
+/* =============================================================================
+   Card Component Styles
+   BEM Naming Convention: card
+   Polestar Design Tokens - Minimalist Dark Theme
+   ============================================================================= */
+
+.card {
+  /* Base Styles */
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-none);
+  border: var(--border-width-thin) solid var(--input-border);
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+
+  /* Default to default variant */
+  background-color: var(--color-neutral-grey-900);
+  color: var(--theme-text-primary);
+
+  /* Focus state for interactive cards */
+  &:focus-visible {
+    outline: var(--border-width-thick) solid var(--color-brand-primary);
+    outline-offset: -2px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Header Element
+   ------------------------------------------------------------------------- */
+.card__header {
+  padding: var(--spacing-lg);
+  border-bottom: var(--border-width-thin) solid var(--input-border);
+}
+
+/* ---------------------------------------------------------------------------
+   Title Element
+   ------------------------------------------------------------------------- */
+.card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: 0;
+  color: var(--theme-text-primary);
+}
+
+/* ---------------------------------------------------------------------------
+   Image Element
+   ------------------------------------------------------------------------- */
+.card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------------------
+   Body Element
+   ------------------------------------------------------------------------- */
+.card__body {
+  padding: var(--spacing-lg);
+  flex: 1;
+  color: var(--theme-text-secondary);
+  line-height: var(--line-height-base);
+}
+
+/* ---------------------------------------------------------------------------
+   Footer Element
+   ------------------------------------------------------------------------- */
+.card__footer {
+  padding: var(--spacing-lg);
+  border-top: var(--border-width-thin) solid var(--input-border);
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ---------------------------------------------------------------------------
+   VARIANT MODIFIERS
+   ------------------------------------------------------------------------- */
+
+/* Default Variant */
+.card--default {
+  background-color: var(--color-neutral-grey-900);
+  border-color: var(--input-border);
+
+  .card__header {
+    border-bottom-color: var(--input-border);
+  }
+
+  .card__footer {
+    border-top-color: var(--input-border);
+  }
+}
+
+/* Highlighted Variant - Orange accent border */
+.card--highlighted {
+  background-color: var(--color-neutral-grey-900);
+  border-color: var(--color-brand-primary);
+  border-width: var(--border-width-thick);
+
+  .card__header {
+    border-bottom-color: var(--color-brand-primary);
+  }
+
+  .card__footer {
+    border-top-color: var(--color-brand-primary);
+  }
+
+  .card__title {
+    color: var(--color-brand-primary);
+  }
+}
+
+/* Elevated Variant - Lighter background */
+.card--elevated {
+  background-color: var(--color-neutral-grey-800);
+  border-color: var(--input-border);
+
+  .card__header {
+    background-color: var(--color-neutral-grey-700);
+    border-bottom-color: var(--input-border);
+  }
+
+  .card__footer {
+    border-top-color: var(--input-border);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   LAYOUT VARIANTS
+   ------------------------------------------------------------------------- */
+
+/* Vertical Layout (Default - Stacked) */
+.card--vertical {
+  flex-direction: column;
+}
+
+/* Horizontal Layout - Image on left, content on right */
+.card--horizontal {
+  flex-direction: row;
+  align-items: stretch;
+
+  .card__image {
+    width: 40%;
+    height: auto;
+    min-height: 200px;
+    object-fit: cover;
+    order: -1;
+  }
+
+  .card__header {
+    flex: 1;
+    border-bottom: none;
+    border-right: var(--border-width-thin) solid var(--input-border);
+    padding: var(--spacing-md);
+  }
+
+  .card__body {
+    flex: 1;
+    padding: var(--spacing-md);
+  }
+
+  .card__footer {
+    flex: 0 1 100%;
+    border-top: var(--border-width-thin) solid var(--input-border);
+    border-right: none;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .card__image {
+      width: 100%;
+      order: 0;
+    }
+
+    .card__header {
+      border-bottom: var(--border-width-thin) solid var(--input-border);
+      border-right: none;
+    }
+  }
+}
+
+/* Compact Variant - No footer/buttons */
+.card--compact {
+  .card__footer {
+    display: none;
+  }
+
+  .card__body {
+    padding: var(--spacing-xl);
+  }
+}
+
+/* Minimal Variant - Only text, centered */
+.card--minimal {
+  .card__header {
+    border-bottom: none;
+  }
+
+  .card__body {
+    padding: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .card__footer {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   INTERACTIVE MODIFIER
+   ------------------------------------------------------------------------- */
+
+.card--interactive {
+  cursor: pointer;
+
+  &:hover:not(.card--disabled) {
+    border-color: var(--color-brand-primary);
+    background-color: var(--color-neutral-grey-800);
+  }
+
+  &:active:not(.card--disabled) {
+    background-color: var(--color-neutral-grey-700);
+  }
+
+  &:focus-visible {
+    outline: var(--border-width-thick) solid var(--color-brand-primary);
+    outline-offset: -2px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   DISABLED MODIFIER
+   ------------------------------------------------------------------------- */
+
+.card--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--color-neutral-grey-900);
+  border-color: var(--color-neutral-grey-700);
+
+  .card__title {
+    color: var(--color-neutral-grey-600);
+  }
+
+  .card__body {
+    color: var(--color-neutral-grey-600);
+  }
+
+  &:hover {
+    background-color: var(--color-neutral-grey-900);
+    border-color: var(--color-neutral-grey-700);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   RESPONSIVE DESIGN
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .card {
+    border-radius: var(--border-radius-none);
+  }
+
+  .card__header,
+  .card__body,
+  .card__footer {
+    padding: var(--spacing-md);
+  }
+
+  .card__title {
+    font-size: var(--font-size-md);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   REDUCED MOTION SUPPORT
+   ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card--interactive:hover {
+    transform: none;
+  }
+}
